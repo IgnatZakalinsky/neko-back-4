@@ -1,8 +1,9 @@
 import {Express, Request, Response} from 'express'
 import {VERSION} from '../i0-config/config'
+import auth from '../i3-features/f0-auth'
 
 export const addRoutes = (app: Express) => {
-    // app.use(VERSION + '/auth', auth)
+    app.use(VERSION + '/auth', auth)
 
     // ping endpoint
     app.use(VERSION + '/ping', (req: Request, res: Response) => {

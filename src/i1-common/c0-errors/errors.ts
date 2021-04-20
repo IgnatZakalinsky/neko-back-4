@@ -1,3 +1,6 @@
+import {Response} from 'express'
+import {IS_DEVELOPER_VERSION} from '../../i0-config/config'
+
 export const destruct = (e: any) => {
     return typeof e === 'object' ? {...e} : 'not object'
 }
@@ -27,4 +30,14 @@ export const onUnhandledRejection = (f?: Function) => {
 export const globalCatch = (fUncaught?: Function, fUnhandled?: Function) => {
     onUncaughtException(fUncaught)
     onUnhandledRejection(fUnhandled)
+}
+
+export const tryWithSendErrorOrAnswer = (res: Response, f: () => {status?: number, data: any}) => {
+    try {
+        const answer = f()
+
+        res.status(answer.status || 200).json(answer.data)
+    } catch (e) {
+        res.status(400).json({error: IS_DEVELOPER_VERSION ? destruct(e) : 'some error'})
+    }
 }

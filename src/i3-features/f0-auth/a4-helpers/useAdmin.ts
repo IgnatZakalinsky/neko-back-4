@@ -26,3 +26,8 @@ export const checkToken = (token: string) => {
 
     return adminToken.t
 }
+
+export const delToken = () => {
+    clearTimeout(adminToken.id)
+    adminToken.t = ''
+}

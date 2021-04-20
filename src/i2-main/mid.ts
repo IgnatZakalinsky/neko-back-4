@@ -15,11 +15,11 @@ export const addMid = (app: Express) => {
     app.use((req: Request, res: Response, next: NextFunction) => {
         if (IS_DEVELOPER_VERSION) {
             console.log('-----------------------------------------------------------------------------')
-            console.log('Time: ', new Date().toString()) // need log always
-            console.log('-----', req.method, req.url) // need log always
-            console.log('query:', req.query) // need log always
-            console.log('body:', req.body) // need log always
-            console.log('cookies:', req.cookies) // need log always
+            console.log('Time: ', new Date().toString())
+            console.log('-----', req.method, req.url)
+            console.log('query:', req.query)
+            console.log('body:', req.body)
+            // console.log('cookies:', req.cookies)
             // log('headers:', req.headers)
             // log('rawHeaders:', req.rawHeaders)
         }

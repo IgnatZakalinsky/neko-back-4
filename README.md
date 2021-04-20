@@ -18,7 +18,7 @@ The server will rebuild if you make edits.
 ### `yarn start-dev`
 
 Runs the server in the development mode.<br />
-Open [http://localhost:7542/3.0](http://localhost:7542/3.0) to view it in the browser.
+Open [http://localhost:7542/4.0](http://localhost:7542/4.0) to view it in the browser.
 
 The server will reload if you make edits.
 
